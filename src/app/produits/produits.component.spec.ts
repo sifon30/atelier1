@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ProduitsComponent } from './produits.component';
+import { Component, OnInit } from '@angular/core';
+import { Produit } from '../model/produit.model';
+import { ProduitService } from '../services/produit.service';
 
 describe('ProduitsComponent', () => {
   let component: ProduitsComponent;

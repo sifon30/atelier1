@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Produit } from '../model/produit.model';
+import { ProduitService } from '../services/produit.service';
 @Component({
   selector: 'app-produits',
-  templateUrl: './produits.component.html',
-  styleUrls: ['./produits.component.css']
+  templateUrl: './produits.component.html'
+  
 })
 export class ProduitsComponent implements OnInit {
-  produits: string[]; // Tableau de chaînes de caractères
-
-  constructor() {
-    this.produits = ["PC Asus", "Imprimante Epson", "Tablette Samsung"];
+  produits : Produit[];
+  constructor(private produiService : ProduitService) {
+     this.produits = produiService.listeProduit();
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 }
