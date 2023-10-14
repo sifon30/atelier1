@@ -10,6 +10,7 @@ import { ProduitService } from '../services/produit.service';
 })
 export class AddProduitComponent implements OnInit {
   newProduit = new Produit();
+  message:string='';
  
   constructor(private produiService : ProduitService) { }
   ngOnInit(): void {
@@ -19,6 +20,7 @@ export class AddProduitComponent implements OnInit {
   addProduit(){
   console.log(this.newProduit);
   this.produiService.ajouterProduit(this.newProduit);
+  this.message=`produit ${this.newProduit.nomProduit} ajouter avec succer`;
    
 
 }}
